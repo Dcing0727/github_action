@@ -28,7 +28,7 @@ public class ResourceLeakExample {
 //        }
 //        // Resource leak: 'reader' is never closed on normal or exceptional execution paths
 //    }
-}
+// }
     
    public static void main(String[] args) {
        // 使用try-with-resources确保BufferedReader正常关闭
