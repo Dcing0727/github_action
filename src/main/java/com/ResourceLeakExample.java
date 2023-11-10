@@ -17,10 +17,18 @@ public class ResourceLeakExample {
            }
        } catch (IOException e) {
            e.printStackTrace();
+       } finally {
+           try {
+               if (reader != null) {
+                   reader.close();
+               }
+           } catch (IOException e) {
+               e.printStackTrace();
+           }
        }
        // Resource leak: 'reader' is never closed on normal or exceptional execution paths
    }
-    
+}
     
 //    public static void main(String[] args) {
 //        // 使用try-with-resources确保BufferedReader正常关闭
